@@ -1,9 +1,9 @@
 name: build-and-test
 
-on: [push, pull request]
+on: [push, pull_request]
 
 jobs:
-  build-and-test
+  build-and-test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -18,7 +18,7 @@ jobs:
 
       - run: python -m build
 
-      - uses: actions/upload-artifacts@v4
+      - uses: actions/upload-artifact@v4
         with:
           name: dist
           path: dist/
